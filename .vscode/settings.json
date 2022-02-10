@@ -1,0 +1,24 @@
+{
+    "files.associations": {
+        "*.sql": "jinja-sql"
+    },
+    "files.trimTrailingWhitespace": true,
+    "[sql]": {
+        "editor.tabSize": 4
+    },
+    "[yml]": {
+        "editor.tabSize": 2
+    },
+    "cSpell.enableFiletypes": [
+        "jinja",
+        "jinja-sql",
+        "sql",
+        "yml"
+    ],
+    "cSpell.words": [
+        "endfor",
+        "endmacro",
+        "noqa",
+        "varchar"
+    ]
+}
