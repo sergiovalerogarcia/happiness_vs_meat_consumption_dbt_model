@@ -14,4 +14,4 @@ sqlfluff = "*"
 python_version = "3.9"
 
 [scripts]
-lint = "./scripts/lint.sh"
+lint = "./dbt_packages/dbt_testing/scripts/lint.sh"
