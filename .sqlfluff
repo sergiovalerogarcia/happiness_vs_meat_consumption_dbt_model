@@ -1,0 +1,15 @@
+[sqlfluff]
+templater = dbt
+dialect = redshift
+ignore_templated_areas = False
+exclude_rules = L031, L044, L051, L059, L034, L001, L016, L057, L029
+
+[sqlfluff:templater:dbt]
+project_dir = .
+profiles_dir = .
+profile = default
+target = dev
+
+[sqlfluff:rules:L010]
+# Keywords
+capitalisation_policy = lower

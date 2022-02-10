@@ -1,4 +1,4 @@
-# Worldwide Meat Consumption
+# Happiness vs Meat Consumption
 
 ## dataset
 

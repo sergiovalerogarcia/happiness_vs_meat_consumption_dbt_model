@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dbt-postgres = "1.0.1"
+
+[dev-packages]
+sqlfluff-templater-dbt = "==0.9.4"
+sqlfluff = "*"
+
+[requires]
+python_version = "3.9"
+
+[scripts]
+lint = "./scripts/lint.sh"

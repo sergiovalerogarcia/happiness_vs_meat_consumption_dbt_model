@@ -1,2 +1,6 @@
 **/discovery/data/
 .ipynb_checkpoints
+
+target/
+dbt_packages/
+logs/

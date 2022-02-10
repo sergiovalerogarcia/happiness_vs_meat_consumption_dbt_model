@@ -1,0 +1,11 @@
+default:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: "{{ env_var('HOST') }}"
+      user: "{{ env_var('USER') }}"
+      password: "{{ env_var('PASSWORD') }}"
+      port: "{{ env_var('PORT') | as_number }}"
+      dbname: "{{ env_var('DBNAME') }}"
+      schema: "{{ env_var('SCHEMA') }}"
