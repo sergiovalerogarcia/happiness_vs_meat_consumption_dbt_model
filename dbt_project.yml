@@ -38,7 +38,7 @@ models:
 
 tests:
   happiness_vs_meat_consumption:
-    +schema: happiness_test
+    +schema: happiness_tests
     integration_tests:
       +tags:
         - integration_tests
