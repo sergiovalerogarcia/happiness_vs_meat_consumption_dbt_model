@@ -1,3 +1,5 @@
 packages:
   - git: git@github.com:sergiovalerogarcia/dbt_testing.git
     revision: main
+  - git: git@github.com:sergiovalerogarcia/happiness_dbt_model.git
+    revision: main
