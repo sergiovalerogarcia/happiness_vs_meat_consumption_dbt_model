@@ -16,7 +16,7 @@ model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
 seed-paths: ["seeds"]
-macro-paths: ["macros"]
+macro-paths: ["macros", "tests_macros"]
 snapshot-paths: ["snapshots"]
 
 target-path: "target"  # directory which will store compiled SQL files
@@ -45,6 +45,13 @@ tests:
     unit_tests:
       +tags:
         - unit_tests
+
+seeds:
+  happiness_vs_meat_consumption:
+    raw_examples:
+      +schema: happiness_tests
+      meat_consumption_worldwide_example:
+        +alias: "{{ var('unique_identifier', '') ~ 'meat_consumption_worldwide_example' }}"
 
 vars:
   integration_tests: 'false'
