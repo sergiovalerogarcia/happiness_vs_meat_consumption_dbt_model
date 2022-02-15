@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: meat_consumption_facts
+    columns:
+      - name: country_code_3_sk
+        tests:
+          - not_null
+      - name: year
+        tests:
+          - not_null
+      - name: consumed_souls_per_capita
+        tests:
+          - not_null
+      - name: million_consumed_souls
+        tests:
+          - not_null

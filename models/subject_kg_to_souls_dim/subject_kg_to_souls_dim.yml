@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: subject_kg_to_souls_dim
+    columns:
+      - name: subject
+        tests:
+          - not_null
+          - unique
+      - name: kg
+        tests:
+          - not_null

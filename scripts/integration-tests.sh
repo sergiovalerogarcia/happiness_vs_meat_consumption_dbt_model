@@ -20,6 +20,14 @@ Run seeds...
 dbt seed -s happiness_vs_meat_consumption.raw_examples --vars "{'integration_tests':'true','unique_identifier':'$UNIQUE_IDENTIFIER_IT'}"
 
 echo "============
+Run models...
+============"
+
+./scripts/meat_consumption_facts.sh "'integration_tests':'true','unique_identifier':'$(cat logs/unique_identifier_it)'"
+
+./scripts/subject_kg_to_souls_dim.sh "'integration_tests':'true','unique_identifier':'$(cat logs/unique_identifier_it)'"
+
+echo "============
 Run test...
 ============"
 
