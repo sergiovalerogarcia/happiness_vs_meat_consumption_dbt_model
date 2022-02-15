@@ -11,7 +11,7 @@ with
 standardize_meat_consumption_with_sk as (
     {{ standardize_meat_consumption_with_sk(
         table_ref=table_ref,
-    )}}
+    ) }}
 )
 
 select *

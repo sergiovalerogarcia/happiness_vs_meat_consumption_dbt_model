@@ -2,6 +2,6 @@
     select *
     from {{ table_ref }}
     where
-        thnd_tonne is not null and
-        kg_cap is not null
+        thnd_tonne is not null
+        and kg_cap is not null
 {% endmacro %}

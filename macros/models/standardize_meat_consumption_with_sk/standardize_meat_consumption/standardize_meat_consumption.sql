@@ -34,9 +34,9 @@
         from filter_thnd_tonne as ftt
             full join filter_kg_cap as fkp
             on (
-                ftt.country_code_3 = fkp.country_code_3 and
-                ftt.subject = fkp.subject and
-                ftt.year = fkp.year
+                ftt.country_code_3 = fkp.country_code_3
+                and ftt.subject = fkp.subject
+                and ftt.year = fkp.year
             )
     )
 

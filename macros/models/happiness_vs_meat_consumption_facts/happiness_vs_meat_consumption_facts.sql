@@ -25,8 +25,8 @@ happiness_vs_meat_consumption_facts as (
             hf.country_name_sk = cd.country_name_sk
         )
         join {{ meat_consumption_facts_table_ref }} as mcf on (
-            mcf.country_code_3_sk = cd.country_code_3_sk and
-            mcf.year = hf.year
+            mcf.country_code_3_sk = cd.country_code_3_sk
+            and mcf.year = hf.year
         )
 ),
 
