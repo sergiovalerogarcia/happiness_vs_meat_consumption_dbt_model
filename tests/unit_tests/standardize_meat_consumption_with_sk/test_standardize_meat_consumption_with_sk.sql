@@ -31,23 +31,6 @@ meat_consumption_worldwide_dataset as (
     ) }}
 ),
 
-{% set columns = [
-    'subject', 'kg',
-] %}
-{% set list_values = [
-    ['BEEF',200.0,],
-    ['PIG',100.0,],
-    ['POULTRY',2.5,],
-    ['SHEEP',80.0,],
-] %}
-
-subject_kg_to_souls_dataset as (
-    {{ create_subject_kg_to_souls_dataset(
-        columns=columns,
-        list_values=list_values,
-    ) }}
-),
-
 -- when
 standardize_meat_consumption_with_sk as (
     {{ standardize_meat_consumption_with_sk(
@@ -55,24 +38,23 @@ standardize_meat_consumption_with_sk as (
     ) }}
 ),
 
-meat_consumption_facts as (
-    {{ meat_consumption_facts(
-        meat_consumption_table_ref='standardize_meat_consumption_with_sk',
-        subject_kg_to_souls_table_ref='subject_kg_to_souls_dataset',
-    ) }}
-),
-
 -- then
 {% set columns = [
-    'country_code_3_sk',                'year', 'consumed_souls_per_capita','million_consumed_souls',
+    'country_code_3','country_code_3_sk',               'subject','year','thnd_tonne',          'kg_cap',
 ] %}
 {% set list_values = [
-    ['8faa77c9cf7465efb7d16af6a0b2630c',2020,    19,     546,]
+    ['AUS',         '8faa77c9cf7465efb7d16af6a0b2630c', 'BEEF',     2020,   739.677216586373,   20.2274657594685,],
+    ['AUS',         '8faa77c9cf7465efb7d16af6a0b2630c', 'PIG',      2020,   680.100925681739,   20.7237889821808,],
+    ['AUS',         '8faa77c9cf7465efb7d16af6a0b2630c', 'POULTRY',  2020,   1330.69138945576,   45.7468517415389,],
+    ['AUS',         '8faa77c9cf7465efb7d16af6a0b2630c', 'SHEEP',    2020,   252.210564209806,   8.67055981573212,],
+    ['NOR',         '11d451c440c4cc34a0238a0482f1c6da', 'PIG',      2020,   140.8,              None,],
+    ['NOR',         '11d451c440c4cc34a0238a0482f1c6da', 'POULTRY',  2020,   105.3,              None,],
+    ['NOR',         '11d451c440c4cc34a0238a0482f1c6da', 'BEEF',     2020,   106.7,              None,],
+    ['NOR',         '11d451c440c4cc34a0238a0482f1c6da', 'SHEEP',    2020,   28.25,              None,],
 ] %}
 
-
 expected as (
-    {{ create_meat_consumption_facts_dataset(
+    {{ create_standardize_meat_consumption_with_sk_dataset(
         columns=columns,
         list_values=list_values,
     ) }}
@@ -81,7 +63,7 @@ expected as (
 assert as (
     {{ dbt_testing.assert_equal(
         expected='expected',
-        actual='meat_consumption_facts',
+        actual='standardize_meat_consumption_with_sk',
         columns=columns
     ) }}
 )

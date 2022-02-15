@@ -52,6 +52,8 @@ seeds:
       +schema: happiness_tests
       meat_consumption_worldwide_example:
         +alias: "{{ var('unique_identifier', '') ~ 'meat_consumption_worldwide_example' }}"
+      subject_kg_to_souls_example:
+        +alias: "{{ var('unique_identifier', '') ~ 'subject_kg_to_souls_example' }}"
 
 vars:
   integration_tests: 'false'

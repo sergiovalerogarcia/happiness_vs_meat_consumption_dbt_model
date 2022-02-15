@@ -1,6 +1,6 @@
 {{
   config(
-    alias='failures_' ~ dbt_testing.generate_name_with_execution_type(this.name)
+    alias='fail_' ~ dbt_testing.generate_name_with_execution_type(this.name)
     )
 }}
 
