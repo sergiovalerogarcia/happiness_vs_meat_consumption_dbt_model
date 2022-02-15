@@ -20,6 +20,8 @@ Run models...
 
 ./scripts/meat_consumption_facts.sh ""
 
+./scripts/happiness_vs_meat_consumption_facts.sh ""
+
 echo "============
 Run test...
 ============"

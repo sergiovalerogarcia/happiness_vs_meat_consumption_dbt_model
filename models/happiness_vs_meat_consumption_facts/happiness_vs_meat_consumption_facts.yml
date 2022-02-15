@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: happiness_vs_meat_consumption_facts
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - country_name
+            - year
+    columns:
+      - name: country_name
+        tests:
+          - not_null
+      - name: year
+        tests:
+          - not_null
+      - name: score
+        tests:
+          - not_null
+      - name: gdp_per_capita
+        tests:
+          - not_null
+      - name: social_support
+        tests:
+          - not_null
+      - name: healthy_life_expectancy
+        tests:
+          - not_null
+      - name: freedom_to_make_life_choices
+        tests:
+          - not_null
+      - name: generosity
+        tests:
+          - not_null
+      - name: perceptions_of_corruption
+        tests:
+          - not_null
+      - name: dystopia_plus_residual
+        tests:
+          - not_null
+      - name: consumed_souls_per_capita
+        tests:
+          - not_null
+      - name: million_consumed_souls
+        tests:
+          - not_null

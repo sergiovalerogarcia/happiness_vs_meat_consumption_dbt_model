@@ -27,6 +27,8 @@ Run models...
 
 ./scripts/subject_kg_to_souls_dim.sh "'integration_tests':'true','unique_identifier':'$(cat logs/unique_identifier_it)'"
 
+./scripts/happiness_vs_meat_consumption_facts.sh "'integration_tests':'true','unique_identifier':'$(cat logs/unique_identifier_it)'"
+
 echo "============
 Run test...
 ============"
