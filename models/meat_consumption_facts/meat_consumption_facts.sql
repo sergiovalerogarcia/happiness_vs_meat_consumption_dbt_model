@@ -6,10 +6,10 @@
 }}
 
 with
-{% set table_ref = ref('subject_kg_to_souls') %}
+{% set table_ref = ref('subject_kg_to_souls_dim') %}
 
 {% if dbt_testing.integration_tests_run_mode() %}
-    {% set table_ref = 'mock_subject_kg_to_souls' %}
+    {% set table_ref = 'mock_subject_kg_to_souls_dim' %}
     {{ table_ref }} as (
       {{ mock_subject_kg_to_souls() }}
     ),
