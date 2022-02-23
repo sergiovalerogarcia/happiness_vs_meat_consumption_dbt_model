@@ -9,6 +9,7 @@ dbt-postgres = "1.0.1"
 [dev-packages]
 sqlfluff-templater-dbt = "==0.9.4"
 sqlfluff = "*"
+re-data = "*"
 
 [requires]
 python_version = "3.9"
