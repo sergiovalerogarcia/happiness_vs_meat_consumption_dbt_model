@@ -8,7 +8,7 @@ then
 fi
 
 DATA_PATH="/home/sergio/workspace/data/dbt/dbt_testing/happiness_vs_meat_consumption/discovery/data/worldwide_meat_consumption_dataset/meat_consumption_worldwide.csv"
-CONNECTION=postgresql://$USER:$PASSWORD@$HOST:$PORT/$DBNAME
+CONNECTION="postgresql://$DBT_USER:$DBT_PASSWORD@$DBT_HOST:$DBT_PORT/$DBT_DBNAME"
 
 copy_table_using_seed_schema() {
     TABLE=$1
